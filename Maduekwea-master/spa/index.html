@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf8" />
+		<meta name="viewport" content="width=device-width", initial-scale="1.0" />
+		<title>Expense Tracker</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="style/main.css">
+		<script type="module" src="./router.js" defer></script>
+	</head>
+	<body>
+
+		<!-- <img src="img/back.jpg"  alt=”Your day to day expense tracker app”> -->
+		<aside class="hidden"><p></p></aside>
+		<header>
+			<h1>Expense Tracker</h1>
+			<p>&nbsp;</p>
+		</header>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/register">Register</a></li>
+				<li><a href="/foo">Foo</a></li>
+				<li><a href="/login">Log in</a></li>
+				<li><a href="/logout">Log out</a></li>
+				<li><a href="/getExpenses">All Expenses</a></li>
+				<li><a href="/addExpense">Add Expenses</a></li>
+				<li><a href="/expenseDetail">Expense Detail</a></li>
+				<li><a href="/managerExpense">Manager Screen</a></li>
+			</ul>
+		</nav>
+		<main>
+			<article>
+			</article>
+		</main>
+		<!-- <footer>
+			<p>&nbsp;</p>
+		</footer> -->
+	<template id="home">
+		<img src="img/back.jpg" alt="Manage Your Expense">
+		<p>Add and Manage your Expense with this Expense tracker.</p>
+		<p>Expense tracking is an important part of creating a budget for your small business.</p>
+		<p>Keeping a daily record of your expenses by tracking receipts, invoices and other outgoing expenses improves the financial health of your budget.</p>
+		<p>Tracking expenses can help you stay on top of your cash flow and prepare you for tax season..</p>
+	</template>
+
+	<template id="login">
+		<form name="login">
+			<p><label for="email">Username</label><br /><input type="text" name="user" placeholder="username" /></p>
+			<p><label for="pass">Password</label><br /><input type="password" name="pass" placeholder="password" /></p>
+			<p><button type="submit">Log in</button></p>
+		</form>
+	</template>
+	<template id="register">
+		<form name="register">
+			<p><label for="name">Username</label><br /><input type="text" name="user" placeholder="full name" /></p>
+			<p><label for="pass">Password</label><br /><input type="password" name="pass" placeholder="password" /></p>
+			<p><button type="submit">Create account</button></p>
+		</form>
+	</template>
+	<template id="logout">
+			<p>Do you want to log out?</p>
+			<p><button>OK</button><button>Cancel</button></p>
+	</template>
+	<template id="foo">
+		<form name="upload" method="post">
+			<p><label for="pass">Choose a file</label><br /><input type="file" name="file" /></p>
+			<p><button type="submit">Upload</button></p>
+		</form>
+	</template>
+
+<template id="addExpense">
+	<p>Welcome to the Expenses Page</p>
+		<form id = "addExpense">
+			<p><label for="Expense">Expense</label><br /><input type="text" name="Expense" placeholder="Enter Your Expense""/></p>
+
+			<!-- <p><label for="period">period</label><br /><input type="datetime" name="period" placeholder="period" /></p> -->
+
+			<p><label for="period">period</label><br /></p>
+			<input type="datetime" id="period" name="period" placeholder="Enter date here">
+
+			<p><label for="amount">Amount (in £): </label><br />
+			<input type="text" name="amount" placeholder="Enter Amount" style="font-size: 15px; height: 40px; width:280px; "/></p>
+
+			<p><label for="description">Description</label><br /><input type="text" name="description" placeholder="Describe Your Expense"/></p>
+
+			<p><label for="category">category</label><br/></p>
+			<select name = "category">
+					<option value = "Food"> Food</option>
+					<option value = "Drink"> Drink</option>
+					<option value = "Accomodation"> Accomodation</option>
+					<option value = "Book"> Book</option>
+					<option value = "Travel"> Travel</option>
+					<option value = "University"> University</option>
+				
+				</select>
+			<p><label for="pass">Choose a file</label><br /><input type="file" name="file" /></p>
+			<p><button type="submit">Add Expense</button></p>
+			</form>
+	</template>
+
+
+
+<template id="getExpenses">
+	<table>
+		<tr>
+	<td><h2><label>Name</label></h2>
+	<p id="expenseName"></p>
+ <!-- <a href="https://dallas-alabama-8080.codio-box.uk/viewExpense">Expense Details</a> -->
+	</td>
+		<td><h2><label>period</label></h2>
+		<p id="period"></p></td>
+		<td><h2><label>shortline</label></h2>
+		<p id="shortline"></p></td>
+		<td><h2><label>amount (in £): </label></h2>
+		<p id="amount"></p></td>
+		<td><h2><label>picture</label></h2><img  width = "400px" height = "300px"></td>
+	 <a></a>
+		</tr>
+	</table>
+	</template>
+
+	
+	<template id="expenseDetail">
+
+	<table width = "500">
+		<tr>
+	<td><h2><label>Name</label></h2>
+	<p id="ExpenseName"></p></td>
+		<td><h2><label>shortline</label></h2>
+		<p id="shortline"></p></td>
+		<td><h2><label>date_created</label></h2>
+		<p id="date_created"></p></td>
+		<td><h2><label>category</label></h2>
+		<p id="category"></p></td>
+		<td><h2><label>picture</label></h2><img  width = "400px" height = "300px"></td>
+		</tr>
+	</table>
+	</template>
+
+
+
+
+	<template id="quote">
+		<section>
+			<h2></h2>
+			<p></p>
+		</section>
+	</template>
+</html>
